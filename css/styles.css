@@ -16,6 +16,7 @@
     --main-bg-cl: #2F303A;
     --secondary-bg-color: #757575;
     --third-bg-color: #F5F4FA;
+    --backdrop-color: rgba(0, 0, 0, 0.2);
 
     /* border colors */
     --border-color: #ECECEC;
@@ -25,6 +26,7 @@
     --icons-primary: #AFB1B8;
     --icons-secondary: #ffffff;
 
+    /* transition timing function */
     --cubic-primary: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -337,6 +339,85 @@ margin-left: 50px;
     
 }
 
+/* section hero modal */
+
+.backdrop{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--backdrop-color);
+
+    transform: scale(1);
+    opacity: 1;
+
+    transition: 
+    transform 250ms var(--cubic-primary),
+    opacity 250ms var(--cubic-primary);
+}
+
+.modal{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    min-width: 528px;
+    min-height: 581px;
+    
+    opacity: 1;
+
+    background-color: #fff;
+    box-shadow: 
+    0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+
+    transition: 
+    opacity 250ms var(--cubic-primary), 
+    transform 250ms var(--cubic-primary),
+}
+
+
+
+.close-button{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.close-button-image{
+    width: 18px;
+    height: 18px;     
+}
+
+.is-hidden{
+    visibility: hidden;
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+.is-hidden .modal {
+    opacity: 0;
+    transform: scale(0.8);
+}
 
 /* servise descriprion section */
 .servise-description .list{
@@ -408,10 +489,44 @@ margin-left: 50px;
     margin-bottom: 50px;
 }
 
+.about-us .img-thumb{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
 .about-us img{
     display: block;
 }   
 
+.about-us .description-thumb {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);;
+}
+
+.about-us .description{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    
+    color: #FFFFFF;
+
+}
 
 /* our team */
 

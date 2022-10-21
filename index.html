@@ -56,7 +56,7 @@
         <h1 class="section-hero-header">
           Еффективні рішення для вашого бізнесу
         </h1>
-        <button class="button button-secondary" type="button" name="замовити послугу">
+        <button class="button button-secondary" type="button" name="замовити послугу" data-modal-open>
           Замовити послугу
         </button>
       </div>
@@ -122,13 +122,28 @@
         <h2 class="sections-headers">Чим ми займаємося</h2>
         <ul class="list flexbox">
           <li class="item">
-            <img src="./image/studio-page/hwimage1.jpg" alt="розробник в процессі роботи" width="370" />
+            <div class="img-thumb">
+              <img src="./image/studio-page/hwimage1.jpg" alt="розробник в процессі роботи" width="370" />
+              <div class="description-thumb">
+              <h3 class="description">Десктопні додатки</h3>
+              </div>
+            </div> 
           </li>
           <li class="item">
-            <img src="./image/studio-page/hwimage2.jpg" alt="дизайнер в процессі роботи" width="370" />
+            <div class="img-thumb">
+              <img src="./image/studio-page/hwimage2.jpg" alt="дизайнер в процессі роботи" width="370" />
+              <div class="description-thumb">
+              <h3 class="description">Мобільні додатки</h3>
+              </div>
+            </div>
           </li>
           <li class="item">
-            <img src="./image/studio-page/hwimage3.jpg" alt="дизайнер в процессі роботи" width="370" />
+            <div class="img-thumb">
+              <img src="./image/studio-page/hwimage3.jpg" alt="дизайнер в процессі роботи" width="370" />
+              <div class="description-thumb">
+              <h3 class="description">Дизайнерські рішення</h3>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -302,6 +317,15 @@
         </div>
       </div>
     </section>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="button close-button" type="button" data-modal-close>
+          <svg class="close-button-image">
+            <use href="./image/icons/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </main>
   <footer class="footer">
     <div class="container flexbox">
@@ -350,6 +374,7 @@
       </div>
     </div>
   </footer>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
